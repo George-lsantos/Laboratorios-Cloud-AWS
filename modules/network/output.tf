@@ -1,6 +1,6 @@
 # ID da VPC
 output "vpc_id" {
-  description = "ID da VPC criada"
+  description = "ID VPC criada"
   value       = aws_vpc.vpc.id
 }
 

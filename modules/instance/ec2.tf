@@ -1,5 +1,5 @@
 resource "aws_key_pair" "my_key" {
-  key_name   = "Key-Pair-Linux"
+  key_name   = "KP-Linux"
   public_key = file("${path.module}/../../my-ec2-key.pub")
 }
 
@@ -13,4 +13,14 @@ resource "aws_instance" "web" {
   # Poderia incluir a chave que foi criada na console da AWS ->  key_name = "my-key"
   associate_public_ip_address = true  # <--- isso atribui um IP público automático
   tags = var.tags_ec2
+
+    # Configuração do volume root
+    root_block_device {
+    volume_type           = "gp3"
+    volume_size           = 8
+    iops                  = 3000
+    encrypted             = false
+  }
+
 }
+

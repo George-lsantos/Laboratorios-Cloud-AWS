@@ -1,6 +1,6 @@
 resource "aws_security_group" "sg_linux" {
   name        = "Linux-security-group"
-  description = "Security group para Linux"
+  description = "Security-group para Linux"
   vpc_id      = aws_vpc.vpc.id
   tags = {
     Name = "Linux-SG"

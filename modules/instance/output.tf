@@ -1,5 +1,5 @@
 output "instance_id" {
-  description = "ID da instância criada"
+  description = "ID instância criada"
   value       = aws_instance.web.id
 }
 

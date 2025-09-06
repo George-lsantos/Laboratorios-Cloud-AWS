@@ -2,7 +2,7 @@
 #Variable VPC
 variable "aws_vpc" {
   type        = string
-  description = "cidr block da VPC"
+  description = "cidr-block da VPC"
   
 }
 

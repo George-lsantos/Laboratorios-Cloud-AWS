@@ -5,7 +5,7 @@ variable "ec2_name"{
 
 variable "instance_type" {
   type = string
-  description = "Ambiente que será provisionado"
+  description = "Amb. que será provisionado"
 }
 
 variable "tags_ec2" {

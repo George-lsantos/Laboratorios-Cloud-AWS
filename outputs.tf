@@ -1,4 +1,4 @@
-# Outputs do módulo network
+# Outputs do módulo network.
 output "vpc_id" {
   value = module.network.vpc_id
 }
