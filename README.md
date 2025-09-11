@@ -31,9 +31,8 @@ Este repositório contém laboratórios práticos com foco em serviços essencia
 | 09 | VPC Peering                                        | Comunicação entre VPCs com VPC Peering                                  | [🔗 Acessar](./lab-09-network-vpc-peering)                              |
 | 10 | Multi-VPC com Transit Gateway                      | Comunicação entre VPCs na mesma conta via AWS Transit Gateway           | [🔗 Acessar](./lab-10-network-multi-vpc-tgw)                            |
 | 11 | Multi-Account Cross-Region com Transit Gateway     | Comunicação entre VPCs em contas e regiões diferentes com TGW           | [🔗 Acessar](./lab-11-network-multi-vpc-tgw-multi-account-cross-region) |
-| 12 | Multi-VPC Cross-Region com TGW + Database          | Comunicação entre VPCs em regiões diferentes, incluindo VPC de Database | [🔗 Acessar](./lab-12-network-multi-vpc-tgw-cross-region-db)            |
-| 13 | Migração com ADS + MGN + Migration Hub             | Descoberta, análise e migração de servidores on-premises para AWS       | [🔗 Acessar](./lab-13-migration-ads-mgn-migration-hub)                  |
-| 14 | Módulos Terraform (EC2 + VPC)                      | Criação de VPC, sub-redes, security groups e EC2 usando módulos        | [🔗 Acessar](./lab-14-modules-EC2-VPC)                                  |
+| 12  | Multi-Account com AWS Organizations                | Criação de estrutura multi-conta com OUs, SCPs e Tag Policies             | [🔗 Acessar](./lab-12-aws-organizations-multi-conta)                    |
+
 
 ---
 
@@ -46,7 +45,9 @@ Este repositório contém laboratórios práticos com foco em serviços essencia
 | 200c   | Network Multi-VPC (Em breve)                                                                       | [lab-200-emBreve-lab-network-Multi-VPC](./lab-200-emBreve-lab-network-Multi-VPC)         |
 | 200d   | Network Peer (Em breve)                                                                            | [lab-200-emBreve-lab-network-peer](./lab-200-emBreve-lab-network-peer)                   |
 | 200e   | Network Básico (Em breve)                                                                          | [lab-200-emBreve-lab-network](./lab-200-emBreve-lab-network)                             |
-
+| 200e | Multi-VPC Cross-Region com TGW + Database          | Comunicação entre VPCs em regiões diferentes, incluindo VPC de Database | [🔗 Acessar](./lab-12-network-multi-vpc-tgw-cross-region-db)            |
+| 200e | Migração com ADS + MGN + Migration Hub             | Descoberta, análise e migração de servidores on-premises para AWS       | [🔗 Acessar](./lab-13-migration-ads-mgn-migration-hub)                  |
+| 200e | Multi-VPC Cross-Region com TGW + Database                     | Criação de VPC, sub-redes, security groups e EC2 usando módulos        | [🔗 Acessar](./lab-14-modules-EC2-VPC)                                  |
 ---
 ✍️ Autor
 George Luis dos Santos
