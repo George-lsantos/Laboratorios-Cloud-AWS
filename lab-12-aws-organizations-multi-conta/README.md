@@ -3,6 +3,15 @@
 ## 🎯 Objetivo
 Este laboratório demonstra a simulação de gerenciamento centralizado de contas AWS utilizando o **AWS Organizations**, aplicando **boas práticas** de segurança, governança e padronização.
 
+
+---
+
+
+##  Arquitetura
+
+![Diagrama de Arquitetura](evidencias/diagramahttps.png)
+
+---
 ---
 
 ## 🛠️ Tarefas Realizadas
