@@ -46,10 +46,10 @@ Este laboratório demonstra a simulação de gerenciamento centralizado de conta
 | Organizational Units (OUs) | ![OU](evidencias/OU.png)                  |
 | IAM Access Analyzer        | ![IAM](evidencias/IAM.png)                |
 | CloudTrail                 | ![CloudTrail](evidencias/CloudTrail.png)  |
-| dministração do CloudTrail           | ![CloudTrail](evidencias/CloudTrail1.png)  |
+| Administração do CloudTrail           | ![CloudTrail](evidencias/CloudTrail1.png)  |
 | Service Control Policy     | ![SCP](evidencias/SCP.png)                |
-| Tag Policies – Bloqueio (acesso negado na região us-east-2)           | ![Tag policies](evidencias/TAGb.png)       |
-| Tag Policies – Permitido(acesso permitido na região us-east-1)             | ![Tag policies](evidencias/TAG.png)       |
+| Tag Policies – **Bloqueio** (acesso negado na região us-east-2)           | ![Tag policies](evidencias/TAGb.png)       |
+| Tag Policies – **Permitido** (acesso permitido na região us-east-1)             | ![Tag policies](evidencias/TAG.png)       |
 
 ---
 
