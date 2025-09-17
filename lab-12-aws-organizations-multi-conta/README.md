@@ -6,12 +6,10 @@ Este laboratório demonstra a simulação de gerenciamento centralizado de conta
 
 ---
 
-
 ##  Arquitetura
 
 ![Diagrama de Arquitetura](evidencias/diagramahttps.png)
 
----
 ---
 
 ## 🛠️ Tarefas Realizadas
