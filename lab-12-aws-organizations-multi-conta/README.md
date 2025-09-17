@@ -1,46 +1,41 @@
 # 🌐 Laboratório AWS Organizations
 
 ## 🎯 Objetivo
-Este laboratório demonstra a simulação de gerenciamento centralizado de **duas contas AWS** utilizando o **AWS Organizations**.  
-Foram aplicadas **boas práticas** na construção de *Organizational Units (OUs)*, *Service Control Policies (SCPs)* e *Tag Policies* para garantir **segurança, governança e padronização**.
-
----
-
-## 🏗️ Arquitetura
-
-Abaixo está a representação da estrutura organizacional criada no laboratório:
-
-![Organizational Structure](evidencias/Diagrama.png)
+Este laboratório demonstra a simulação de gerenciamento centralizado de contas AWS utilizando o **AWS Organizations**, aplicando **boas práticas** de segurança, governança e padronização.
 
 ---
 
 ## 🛠️ Tarefas Realizadas
 
-1. **Convite de Contas**  
-   - Envio de *invite* para duas contas AWS externas.  
+1. **Criação de Organizational Units (OUs)**  
+   - Estrutura criada seguindo boas práticas de organização.  
 
-2. **Criação de OUs (Organizational Units)**  
-   - OU `Empresa A` → subdividida em: `Dev`, `Prod`, `Sandbox`.  
-   - OU `Empresa B` → subdividida em: `Infrastructure`, `Prod`, `Sandbox`, `Security`.  
+2. **Habilitação de Acesso Confiável**  
+   - Ativado **AWS Account Management** e **IAM Access Analyzer** para acesso confiável entre contas.  
 
-3. **Políticas de Tags (Tag Policies)**  
-   - Criada política que **bloqueia a criação de recursos sem TAG** obrigatória.  
-   - Valores aceitos: `dev`, `prod`, `hml`.  
+3. **Configuração de CloudTrail**  
+   - Criado um **Trail multi-region**.  
+   - Como se trata de ambiente de laboratório, **não foi habilitado** o *Log file SSE-KMS encryption* nem o envio para **CloudWatch Logs**.  
+   - Delegada a conta **`adm-seguranca`** para administração do CloudTrail.  
 
 4. **Service Control Policies (SCPs)**  
-   - Exemplo aplicado: **negar criação de buckets S3 fora da região `us-east-1`**.  
+   Foram criadas as seguintes políticas:  
+   - **TAG obrigatória `Project`** para criação de buckets S3.  
+   - Obrigatoriedade de **tags em recursos** (ex.: `Project`, `Environment`, `Owner`).  
+   - Restrição de regiões permitidas: apenas **`us-east-1`** e **`sa-east-1`**.  
 
-5. **Ativação do AWS Cost Explorer**  
-   - Cada conta pode visualizar seu **uso e custo** através do painel central.  
+5. **Tag Policies**  
+   - Criadas políticas para **padronização e obrigatoriedade de tags** em recursos AWS.  
 
 ---
 
 ## ✅ Resultados Esperados
 
-- Estrutura organizacional com separação clara por **empresa** e **ambiente**.  
-- Governança garantida por meio de **SCPs** e **Tag Policies**.  
-- Contas subordinadas com **restrição regional de recursos**.  
-- Maior visibilidade de custos por **conta** e **ambiente**.  
+- Estrutura organizacional clara, com **OUs bem definidas**.  
+- Governança aprimorada via **SCPs** e **Tag Policies**.  
+- **CloudTrail multi-region** ativo para auditoria centralizada.  
+- Controle de **tags obrigatórias** em recursos críticos.  
+- Restrição de **regiões permitidas** para criação de recursos.  
 
 ---
 
@@ -48,29 +43,19 @@ Abaixo está a representação da estrutura organizacional criada no laboratóri
 
 | Componente                | Screenshot                              |
 |----------------------------|------------------------------------------|
-| Convites de contas         | ![Invitations](evidencias/Invitations.png) |
-| Organizational Structure   | ![OU](evidencias/OU.png)                  |
-| Tag Policies               | ![Tag policies](evidencias/TAG.png)       |
+| Organizational Units (OUs) | ![OU](evidencias/OU.png)                  |
+| IAM Access Analyzer        | ![IAM](evidencias/IAM.png)                |
+| CloudTrail                 | ![CloudTrail](evidencias/CloudTrail.png)  |
+| dministração do CloudTrail           | ![CloudTrail](evidencias/CloudTrail1.png)  |
 | Service Control Policy     | ![SCP](evidencias/SCP.png)                |
-| AWS Cost Explorer          | ![Cost](evidencias/Cost.png)              |
+| Tag Policies – Bloqueio (acesso negado na região us-east-2)           | ![Tag policies](evidencias/TAGb.png)       |
+| Tag Policies – Permitido(acesso permitido na região us-east-1)             | ![Tag policies](evidencias/TAG.png)       |
 
 ---
 
 ## 📘 Recursos Recomendados
 
 - [AWS Organizations – Documentação Oficial](https://docs.aws.amazon.com/organizations/latest/userguide/orgs_introduction.html)  
-- [Melhores práticas de AWS Organizations](https://docs.aws.amazon.com/organizations/latest/userguide/best-practices.html)  
-- [Tag Policies – AWS Docs](https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies.html)  
 - [Service Control Policies – AWS Docs](https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scps.html)  
-
----
-
-## 🧠 Observações
-
-- O laboratório pode ser expandido com:  
-  - **Múltiplas contas** para times diferentes.  
-  - Integração com **AWS Control Tower**.  
-  - Conexões híbridas com **Direct Connect** ou **VPNs on-premises**.  
-- Também é possível aplicar **estratégias de FinOps** para otimização de custos entre contas.  
-
----
+- [Tag Policies – AWS Docs](https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies.html)  
+- [AWS CloudTrail – Documentação](https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-user-guide.html)  
