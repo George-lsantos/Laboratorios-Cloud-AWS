@@ -29,7 +29,7 @@ O controle de acesso é feito através de **grupos de usuários e administradore
 ### 4️⃣ Configuração de Security Groups
 - Liberação de portas do AD entre as VPCs:  
   `TCP/UDP 53, 88, 389, 445, 464, 3268, 3269`.  
-- Liberação do acesso RDP (`3389`) apenas para o **Bastion Host**.  
+- Liberação do acesso RDP (`3389`) apenas para o **Bastion-Host**.  
 
 ### 5️⃣ Deploy do AD Connector (Conta B)
 - Criação do **AD Connector** no **AWS Directory Service**.  
@@ -63,7 +63,7 @@ O controle de acesso é feito através de **grupos de usuários e administradore
 
 ---
 
-## 🧠 Arquitetura
+## 🧠 Arquitetura.
 
 ![Diagrama de Arquitetura](arquitetura.png)
 
