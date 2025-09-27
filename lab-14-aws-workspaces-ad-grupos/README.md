@@ -1,4 +1,4 @@
-# 🧪 Laboratório AWS: Amazon WorkSpaces + Active Directory com Grupos
+# 🧪 Laboratório AWS: Amazon WorkSpaces + Active Directory com Grupos (Labs Futuros e em Desenvolvimento)
 
 Este laboratório demonstra a integração do **Amazon WorkSpaces** com um **Active Directory self-managed** (na Conta A), aproveitando o **AD Connector** (na Conta B).  
 O controle de acesso é feito através de **grupos de usuários e administradores**, garantindo separação clara entre quem pode **usar os WorkSpaces** e quem pode **administrá-los**.
