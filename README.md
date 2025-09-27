@@ -41,8 +41,8 @@ Meus laboratórios abordam os seguintes tópicos principais:
 | **10** | Rede Hub-and-Spoke | Transit Gateway, VPCs | Gerenciamento centralizado de tráfego de rede para múltiplas VPCs usando Transit Gateway. | [Acessar](https://github.com/George-lsantos/Laboratorios-Cloud-AWS/tree/main/lab-10-network-multi-vpc-tgw) |
 | **11** | Rede Global (Multi-Conta/Região) | Transit Gateway, VPCs | Conexão de VPCs em diferentes contas e regiões, simulando uma rede corporativa global. | [Acessar](https://github.com/George-lsantos/Laboratorios-Cloud-AWS/tree/main/lab-11-network-multi-vpc-tgw-multi-account-cross-region) |
 | **12** | Governança Multi-Conta | AWS Organizations, SCPs | Criação de uma estrutura organizacional para gerenciar permissões e políticas de forma centralizada. | [Acessar](https://github.com/George-lsantos/Laboratorios-Cloud-AWS/tree/main/lab-12-aws-organizations-multi-conta) |
-| **13** | Migração de Servidores | MGN, ADS, Migration Hub | Simulação completa do processo de migração de servidores on-premises para a AWS. | [Acessar](https://github.com/George-lsantos/Laboratorios-Cloud-AWS/tree/main/lab-13-migration-ads-mgn-migration-hub) |
-| **14** | IAC com Módulos Terraform | Terraform, EC2, VPC | Criação de infraestrutura reutilizável e padronizada com o uso de módulos. | [Acessar](https://github.com/George-lsantos/Laboratorios-Cloud-AWS/tree/main/lab-14-modules-EC2-VPC) |
+| **13** | Multi-Account AD + AWS AD Connector | AD DS, AD Connector, VPC Peering | Integração de um Active Directory self-managed em uma conta AWS com workloads em outra conta utilizando o AD Connector. | [Acessar](https://github.com/George-lsantos/Laboratorios-Cloud-AWS/tree/main/lab-13-aws-ad-connector-multi-conta) |
+
 
 ---
 
