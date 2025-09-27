@@ -3,10 +3,13 @@
 Este laboratório demonstra a integração de um **Active Directory self-managed** em uma conta AWS (**Conta A**) com workloads em outra conta AWS (**Conta B**), utilizando **VPC Peering** e o serviço **AWS AD Connector**.
 
 ---
-## 🧠 Arquitetura
 
-![Diagrama de Arquitetura](arquitetura.png)
+##  Arquitetura
+
+![Diagrama de Arquitetura](evidencias/arquitetura.png)
+
 ---
+
 ## 🔧 Etapas Realizadas
 
 ### 1️⃣ Configuração do AD na Conta A
