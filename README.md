@@ -42,6 +42,8 @@ Meus laboratórios abordam os seguintes tópicos principais:
 | **11** | Rede Global (Multi-Conta/Região) | Transit Gateway, VPCs | Conexão de VPCs em diferentes contas e regiões, simulando uma rede corporativa global. | [Acessar](https://github.com/George-lsantos/Laboratorios-Cloud-AWS/tree/main/lab-11-network-multi-vpc-tgw-multi-account-cross-region) |
 | **12** | Governança Multi-Conta | AWS Organizations, SCPs | Criação de uma estrutura organizacional para gerenciar permissões e políticas de forma centralizada. | [Acessar](https://github.com/George-lsantos/Laboratorios-Cloud-AWS/tree/main/lab-12-aws-organizations-multi-conta) |
 | **13** | Multi-Account AD + AWS AD Connector | AD DS, AD Connector, VPC Peering | Integração de um Active Directory self-managed em uma conta AWS com workloads em outra conta utilizando o AD Connector. | [Acessar](https://github.com/George-lsantos/Laboratorios-Cloud-AWS/tree/main/lab-13-aws-ad-connector-multi-conta) |
+| **14** | Amazon WorkSpaces + AD com Grupos | AD DS, AD Connector, WorkSpaces | Integração do Amazon WorkSpaces com Active Directory self-managed, controlando acesso via grupos de usuários e administradores. | [Acessar](https://github.com/George-lsantos/Laboratorios-Cloud-AWS/tree/main/lab-14-aws-workspaces-ad-grupos) |
+
 
 
 ---
