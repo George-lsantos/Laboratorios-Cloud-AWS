@@ -1,8 +1,9 @@
-# 🧪 Laboratório AWS: Active Directory + Amazon FSx for Windows File Server (Labs Futuros e em Desenvolvimento)
+# 🧪 Laboratório AWS: Active Directory + Amazon FSx for Windows File Server  
+*(Labs Futuros e em Desenvolvimento)*
 
 ## 🎯 Objetivo
-Este laboratório demonstra a integração de um **Active Directory self-managed** (na Conta A) com o **Amazon FSx for Windows File Server** (na Conta B).  
-O acesso e as permissões são controlados via **grupos no AD**, garantindo separação clara entre **usuários** e **administradores de arquivos**.
+Este laboratório demonstra a integração de um **Active Directory self-managed** hospedado em EC2 com o serviço **Amazon FSx for Windows File Server**, ambos dentro da mesma VPC.  
+O objetivo é fornecer um ambiente prático de **autenticação centralizada**, **armazenamento de arquivos corporativo** e **gestão de permissões via Active Directory** — seguindo as **melhores práticas de segurança e isolamento em subnets privadas**.
 
 ---
 
@@ -10,81 +11,73 @@ O acesso e as permissões são controlados via **grupos no AD**, garantindo sepa
 
 ![Diagrama de Arquitetura](arquitetura.png)
 
+### 🔍 Descrição da Arquitetura
+- **VPC CIDR:** `10.1.0.0/16`  
+- **Zonas de disponibilidade:** Duas AZs para alta disponibilidade.  
+- **Subnets:**
+  - `10.1.1.0/24` — Pública (Bastion Host)  
+  - `10.1.2.0/24` — Pública (NAT Gateway)  
+  - `10.1.3.0/24` — Privada (Active Directory)  
+  - `10.1.4.0/24` — Privada (FSx for Windows)  
+- **Bastion Host:** usado para acesso RDP seguro às instâncias privadas.  
+- **Active Directory (AD):** executado em uma instância EC2 Windows Server, promovida como Controlador de Domínio (`empresa.local`).  
+- **Amazon FSx:** integrado ao domínio AD, fornecendo compartilhamento SMB com autenticação centralizada.  
+- **Segurança:**
+  - RDP (`3389`) acessível apenas via Bastion Host.  
+  - Portas LDAP, Kerberos e SMB liberadas entre o AD e o FSx.  
+  - NAT Gateway usado para acesso à internet pelas instâncias privadas.  
+
 ---
 
 ## 🛠️ Tarefas Realizadas
 
-1. **Configuração do Active Directory (Conta A)**  
-   - Criação da **VPC (172.16.0.0/16)** com subnets pública e privada.  
-   - Deploy de **EC2 Windows Server (AD DS)** na subnet privada, promovido como **Controlador de Domínio** (`empresa.local`).  
-   - Criação de **grupos no AD**:  
-     - `FSx-Users`: usuários com acesso ao FSx.  
-     - `FSx-Admins`: administradores responsáveis por permissões e quotas.  
-   - Contas criadas:  
-     - `joao.silva` (grupo `FSx-Users`).  
-     - `maria.admin` (grupo `FSx-Admins`).  
-
-2. **Configuração da VPC (Conta B)**  
-   - Criação da **VPC (10.0.0.0/16)** com subnets privadas em **duas AZs** para o FSx.  
-
-3. **Peering entre as VPCs**  
-   - Estabelecido **VPC Peering** entre Conta A e Conta B.  
-   - Configuração de rotas:  
-     - Conta A → `10.0.0.0/16`.  
-     - Conta B → `172.16.0.0/16`.  
-
-4. **Configuração de Security Groups**  
-   - Liberação de portas do AD: `53, 88, 135, 389, 445, 464, 636, 3268, 3269`.  
-   - RDP (`3389`) restrito ao **Bastion-Host**.  
-   - Garantido o acesso SMB (`445`) ao FSx.  
-
-5. **Deploy do Amazon FSx (Conta B)**  
-   - Criação do **Amazon FSx for Windows File Server** integrado ao domínio `empresa.local`.  
-   - Selecionadas subnets privadas da Conta B.  
-   - Configuração de permissões:  
-     - `FSx-Users`: **Read/Write**.  
-     - `FSx-Admins`: **Full Control**.  
-   - Ativado **Shadow Copies** para restauração de versões.  
-
-6. **Acesso ao Compartilhamento FSx**  
-   - Mapeamento da unidade de rede pelos usuários:  
-     ```powershell
-     net use Z: \\fsx-empresa.local\Compartilhamento
-     ```
-   - **Usuários FSx-Users**: salvar e abrir arquivos.  
-   - **Usuários FSx-Admins**: alterar permissões e gerenciar cotas.  
+### 1. **Configuração da VPC**
+- Criação da **VPC 10.1.0.0/16**.  
+- Criação de **duas zonas de disponibilidade (AZ-A e AZ-B)** com subnets públicas e privadas.  
+- Criação de **Internet Gateway** e **NAT Gateway**.  
+- Configuração de **tabelas de rotas** para acesso interno e externo.
 
 ---
 
-## ✅ Resultados Esperados
-
-- Usuários do grupo **FSx-Users** conseguem acessar e utilizar o compartilhamento do FSx.  
-- Administradores do grupo **FSx-Admins** podem gerenciar permissões, quotas e administração do FSx.  
-- O FSx está **integrado ao AD**, garantindo autenticação centralizada.  
-- Segurança mantida via **VPC Peering** e **grupos de AD**.  
-- **Alta disponibilidade** garantida pelo FSx em múltiplas zonas de disponibilidade.  
+### 2. **Deploy do Bastion Host**
+- Instância EC2 Windows Server em `10.1.1.0/24` (pública).  
+- Acesso via RDP controlado por **Security Group (SG-RDP)**.  
+- Permite acesso remoto às instâncias privadas.
 
 ---
 
-## 📷 Evidências de Configuração
-
-| Componente | Screenshot |
-|------------|------------|
-| VPC Conta A (AD DS) | ![VPC A](evidencias/vpc-a.png) |
-| Bastion Host | ![Bastion](evidencias/bastion.png) |
-| AD DS configurado | ![AD DS](evidencias/ad-ds.png) |
-| Amazon FSx for Windows File Server | ![FSx](evidencias/fsx.png) |
-| Compartilhamento FSx mapeado no Windows | ![FSxMap](evidencias/fsx-mapeado.png) |
-| Grupo FSx-Users no AD | ![Users](evidencias/grupo-users.png) |
-| Grupo FSx-Admins no AD | ![Admins](evidencias/grupo-admins.png) |
-| Usuário joao.silva acessando FSx | ![UserFSx](evidencias/user-fsx.png) |
-| Usuário maria.admin gerenciando permissões | ![AdminFSx](evidencias/admin-fsx.png) |
+### 3. **Configuração do Active Directory (AD)**
+- Instância EC2 Windows Server em `10.1.3.0/24` (privada).  
+- Promovida como **Controlador de Domínio**: `empresa.local`.  
+- Criados **grupos e usuários**:
+  - `FSx-Users` → Acesso **Read/Write**.  
+  - `FSx-Admins` → Acesso **Full Control**.  
+- Contas:
+  - `joao.silva` (usuário comum).  
+  - `maria.admin` (administradora FSx).
 
 ---
 
-## 📘 Recursos Recomendados
+### 4. **Deploy do Amazon FSx for Windows File Server**
+- Criado em `10.1.4.0/24` (privada).  
+- Integrado ao domínio **empresa.local**.  
+- Configuradas permissões:
+  - `FSx-Users`: Leitura e gravação.  
+  - `FSx-Admins`: Controle total.  
+- Ativado **Shadow Copies** para restauração de versões.  
 
-- [Amazon FSx for Windows File Server – Documentação Oficial](https://docs.aws.amazon.com/fsx/latest/WindowsGuide/what-is.html)  
-- [AWS Directory Service](https://docs.aws.amazon.com/directoryservice/)  
-- [Active Directory Group Management](https://learn.microsoft.com/en-us/windows-server/identity/ad-ds/manage/creating-managing-groups)  
-- [Best Practices for Amazon FSx](https://docs.aws.amazon.com/fsx/latest/WindowsGuide/best-practices.html)  
+---
+
+### 5. **Configuração de Segurança**
+- **Security Groups:**
+  - Bastion → AD: RDP (`3389`)  
+  - AD ↔ FSx: LDAP (`389`), Kerberos (`88`), SMB (`445`), RPC (`135`), LDAPS (`636`), Global Catalog (`3268-3269`)  
+- **NACLs** configuradas para comunicação interna segura entre subnets.  
+
+---
+
+### 6. **Mapeamento do Compartilhamento FSx**
+A partir de uma estação do domínio ou do Bastion Host:
+
+```powershell
+net use Z: \\fsx-empresa.local\Compartilhamento
