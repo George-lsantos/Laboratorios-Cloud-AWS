@@ -44,7 +44,7 @@ Meus laboratórios abordam os seguintes tópicos principais:
 | **13** | Multi-Account AD + AWS AD Connector | AD DS, AD Connector, VPC Peering | Integração de um Active Directory self-managed em uma conta AWS com workloads em outra conta utilizando o AD Connector. | [Acessar](https://github.com/George-lsantos/Laboratorios-Cloud-AWS/tree/main/lab-13-aws-ad-connector-multi-conta) |
 | **14** | Amazon WorkSpaces + AD com Grupos | ADDS, AD Connector, WorkSpaces | Integração do Amazon WorkSpaces com Active Directory self-managed, controlando acesso via grupos de usuários e administradores. | [Acessar](https://github.com/George-lsantos/Laboratorios-Cloud-AWS/tree/main/lab-14-aws-workspaces-ad-grupos) |
 | **15** | Amazon FSx + AD com Grupos | ADDS, Amazon FSx | Integração do Amazon FSx for Windows File Server com Active Directory self-managed, controlando permissões de acesso via grupos de usuários e administradores. | [Acessar](https://github.com/George-lsantos/Laboratorios-Cloud-AWS/tree/main/lab-15-aws-fsx-ad-grupos) |
-
+| **16** | WordPress Altamente Disponível | EC2, ALB, Auto Scaling, RDS, EFS, VPC | Implementação de arquitetura WordPress altamente disponível utilizando Load Balancer, Auto Scaling, armazenamento compartilhado com EFS e banco de dados gerenciado com RDS em múltiplas Availability Zones. | [Acessar](https://github.com/George-lsantos/Laboratorios-Cloud-AWS/tree/main/lab-16-aws-wordpress-ha-efs-rds) |
 
 
 ---
