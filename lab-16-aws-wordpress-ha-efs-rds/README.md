@@ -25,7 +25,6 @@ Usuário → Route 53 → CloudFront → Application Load Balancer → EC2 (Auto
 
 | Componente | Screenshot |
 |------------|------------|
-| Arquitetura | ![Arquitetura](evidencias/diagrama.png) |
 | VPC | ![VPC](evidencias/vpc.png) |
 | CloudFront | ![CloudFront](evidencias/cloudfront.png) |
 | Route 53 | ![Route53](evidencias/route53.png) |
@@ -62,3 +61,4 @@ Arquitetura alinhada com:
 ## 📚 Autor
 
 Projeto criado para fins de estudo e prática em arquitetura AWS.
+
