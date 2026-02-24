@@ -1,115 +1,64 @@
-# 🌐 WordPress Altamente Disponível com Auto Scaling, RDS e EFS na AWS
+# Laboratório AWS: CloudFront + ALB + Auto Scaling + Route 53 + ACM + RDS + EFS
 
-Este laboratório demonstra como construir uma arquitetura **altamente disponível, escalável e resiliente** para uma aplicação WordPress na AWS, utilizando:
-
-- Application Load Balancer
-- Auto Scaling Group
-- Amazon EC2
-- Amazon RDS (MySQL)
-- Amazon EFS
-- VPC com subnets públicas e privadas
-
-## 🎯 Objetivo
-
-Implantar um ambiente WordPress que ofereça:
-
-- Alta disponibilidade
-- Escalabilidade automática
-- Armazenamento compartilhado entre instâncias
-- Banco de dados gerenciado
-- Isolamento de rede com subnets privadas
-- Balanceamento de carga automático
+Este laboratório demonstra a implementação de uma arquitetura **altamente disponível, segura e escalável** na AWS utilizando **CloudFront, Application Load Balancer, Auto Scaling, Route 53, ACM, RDS, EFS e Systems Manager**, seguindo boas práticas do AWS Well-Architected Framework.
 
 ---
 
-## 🏗️ Arquitetura
+## Arquitetura
 
-![Arquitetura](evidencias/arquitetura-wordpress.png)
-
-### Componentes
+![Diagrama de Arquitetura](evidencias/diagrama.png)
 
 ---
 
-## 🚀 Serviços AWS Utilizados
+## Serviços utilizados 
+Amazon VPC (Subnets públicas e privadas); Amazon EC2 com Auto Scaling Group - Application Load Balancer (ALB); Amazon CloudFront; Amazon Route 53; AWS Certificate Manager (ACM); Amazon RDS; Amazon EFS; NAT Gateway e Internet Gateway; AWS Systems Manager; Security Groups e Launch Template; 
 
-- Amazon VPC
-- Amazon EC2
-- Amazon RDS
-- Amazon EFS
-- Application Load Balancer
-- Auto Scaling Group
-- Internet Gateway
-- NAT Gateway
-- Security Groups
+---
+
+## Fluxo da aplicação
+
+Usuário → Route 53 → CloudFront → Application Load Balancer → EC2 (Auto Scaling Group) → RDS e EFS
 
 ---
 
 ## 📷 Evidências
 
 | Componente | Screenshot |
-|----------|------------|
+|------------|------------|
+| Arquitetura | ![Arquitetura](evidencias/diagrama.png) |
+| VPC | ![VPC](evidencias/vpc.png) |
+| CloudFront | ![CloudFront](evidencias/cloudfront.png) |
+| Route 53 | ![Route53](evidencias/route53.png) |
+| ACM | ![ACM](evidencias/acm.png) |
 | Load Balancer | ![ALB](evidencias/alb.png) |
-| Auto Scaling Group | ![ASG](evidencias/asg.png) |
-| EFS | ![EFS](evidencias/efs.png) |
+| Auto Scaling | ![ASG](evidencias/asg.png) |
+| EC2 | ![EC2](evidencias/ec2.png) |
 | RDS | ![RDS](evidencias/rds.png) |
-| WordPress funcionando | ![WordPress](evidencias/wordpress.png) |
+| EFS | ![EFS](evidencias/efs.png) |
+| Systems Manager | ![SSM](evidencias/ssm.png) |
 
 ---
 
-## ✅ Resultados
+## ✅ Resultado
 
-✔ Alta disponibilidade  
-✔ Escalabilidade automática  
-✔ Failover automático  
-✔ Arquitetura resiliente  
-✔ Armazenamento compartilhado  
-✔ Banco gerenciado  
+Infraestrutura **altamente disponível, segura e escalável**, com:
 
----
+- Balanceamento de carga  
+- Escalabilidade automática  
+- Comunicação segura via HTTPS  
+- Instâncias em subnets privadas  
+- Banco de dados gerenciado  
+- Sistema de arquivos compartilhado  
+- Gerenciamento seguro via Systems Manager  
 
-## 📚 Conceitos Aplicados
+Arquitetura alinhada com:
 
-- High Availability
-- Fault Tolerance
-- Elasticity
-- Scalability
-- Cloud Architecture
-- AWS Networking
-- Stateless Architecture
+- AWS Well-Architected Framework  
+- AWS Solutions Architect Associate  
+- AWS Solutions Architect Professional  
 
 ---
 
-## 🧠 Aprendizados
+## 📚 Autor
 
-Este laboratório demonstra como construir uma arquitetura de produção utilizando:
-
-- Multi-AZ deployment
-- Auto Scaling
-- Load Balancing
-- Shared Storage com EFS
-- Banco gerenciado com RDS
-
----
-
-## 🔮 Melhorias Futuras
-
-- HTTPS com ACM
-- CloudFront (CDN)
-- Route 53
-- AWS WAF
-- Monitoramento com CloudWatch
-- Infraestrutura como código com Terraform
-
----
-
-## 👨‍💻 Autor
-
-George Luis Dos Santos
-
-AWS | DevOps | Cloud Engineer
-
----
-
-## 📄 Licença
-
-Este projeto é destinado para fins educacionais e de aprendizado.
+Projeto criado para fins de estudo e prática em arquitetura AWS.
