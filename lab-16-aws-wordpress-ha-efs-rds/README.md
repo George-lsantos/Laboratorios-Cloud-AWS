@@ -28,12 +28,6 @@ O AWS Certificate Manager (ACM) é utilizado para fornecer certificados SSL/TLS 
 ---
 ---
 
-## Fluxo da aplicação
-
-Usuário → Route 53 → CloudFront → Application Load Balancer → EC2 (Auto Scaling Group) → RDS e EFS
-
----
-
 ## 📷 Evidências
 
 | Componente | Screenshot |
@@ -110,6 +104,7 @@ Arquitetura alinhada com:
 ## 📚 Autor
 
 Projeto criado para fins de estudo e prática em arquitetura AWS.
+
 
 
 
