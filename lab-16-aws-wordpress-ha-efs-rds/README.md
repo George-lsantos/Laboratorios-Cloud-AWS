@@ -19,14 +19,13 @@ Este laboratório demonstra a implementação de uma arquitetura **altamente dis
 - **Gerenciamento e operação**: AWS Systems Manager (Session Manager); Amazon CloudWatch (monitoramento e métricas) e Amazon SNS (notificações e alertas)
 
 ---
-
+---
 ## Fluxo da aplicação
 
-Usuário → Route 53 → CloudFront → Application Load Balancer → EC2 (Auto Scaling Group) → RDS e EFS
+Usuário → Route 53 → CloudFront → Application Load Balancer → EC2 (Auto Scaling Group) → RDS e EFS.
+O AWS Certificate Manager (ACM) é utilizado para fornecer certificados SSL/TLS ao CloudFront e ao Application Load Balancer, garantindo comunicação segura via HTTPS.
 
 ---
-
-
 ---
 
 ## Fluxo da aplicação
@@ -111,6 +110,7 @@ Arquitetura alinhada com:
 ## 📚 Autor
 
 Projeto criado para fins de estudo e prática em arquitetura AWS.
+
 
 
 
