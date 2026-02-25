@@ -34,6 +34,8 @@ Usuário → Route 53 → CloudFront → Application Load Balancer → EC2 (Auto
 | ACM | ![ACM](evidencias/acm.png) |
 | Systems Manager | ![SSM](evidencias/ssm.png) |
 
+--- 
+
 ## 📷 Evidência: Auto Scaling substituindo instância automaticamente
 
 O Auto Scaling detectou uma instância com falha e automaticamente lançou uma nova instância saudável, garantindo alta disponibilidade da aplicação.
@@ -41,6 +43,7 @@ O Auto Scaling detectou uma instância com falha e automaticamente lançou uma n
 ### Instância substituída automaticamente
 
 ![EC2 substituída](evidencias/ec2-substituida.png)
+---
 
 ### Histórico do Auto Scaling mostrando substituição automática
 
@@ -54,8 +57,31 @@ Evento registrado:
 - Aplicação permaneceu disponível sem intervenção manual
 
 Isso demonstra: Alta disponibilidade; Self-healing architecture; Fault tolerance; Arquitetura resiliente
----
 
+---
+---
+## 🌐 Evidência: Aplicação WordPress em funcionamento
+
+A aplicação WordPress está publicada e acessível via CloudFront, com balanceamento de carga pelo Application Load Balancer e instâncias gerenciadas pelo Auto Scaling Group.
+
+### Página About do site
+
+![WordPress funcionando](evidencias/site-wordpress.png)
+
+URL de acesso:
+
+https://www.projetoaws.online
+
+Esta evidência demonstra:
+
+- Aplicação totalmente funcional
+- Integração com CloudFront
+- Balanceamento de carga com ALB
+- Escalabilidade com Auto Scaling
+- Backend com RDS e EFS
+- Comunicação segura via HTTPS (ACM)
+
+---
 ## ✅ Resultado
 
 Infraestrutura **altamente disponível, segura e escalável**, com: Balanceamento de carga; Escalabilidade automática; Comunicação segura via HTTPS; Instâncias em subnets privadas; Banco de dados gerenciado; Sistema de arquivos compartilhado e Gerenciamento seguro via Systems Manager  
@@ -71,6 +97,7 @@ Arquitetura alinhada com:
 ## 📚 Autor
 
 Projeto criado para fins de estudo e prática em arquitetura AWS.
+
 
 
 
