@@ -12,11 +12,11 @@ Este laboratório demonstra a implementação de uma arquitetura **altamente dis
 ## Serviços utilizados
 
 
-- **Rede e entrega de conteúdo**: Amazon VPC (Virtual Private Cloud); Subnets públicas e privadas em múltiplas Availability Zones; Internet Gateway; NAT Gateway; Amazon Route 53 (DNS) e Amazon CloudFront (CDN).
-- **Balanceamento e escalabilidade**: Application Load Balancer (ALB); Amazon EC2 Auto Scaling Group (ASG); Amazon EC2 (instâncias em subnets privadas) e Launch Template.
-- **Armazenamento e banco de dados**: Amazon RDS (banco de dados gerenciado) e Amazon EFS (Elastic File System – armazenamento compartilhado).
-- **Segurança AWS Certificate Manager (ACM)**:  certificados SSL/TLS; Security Groups e Instâncias em subnets privadas (sem acesso direto da internet).
-- **Gerenciamento e operação**: AWS Systems Manager (Session Manager); Amazon CloudWatch (monitoramento e métricas) e Amazon SNS (notificações e alertas)
+**Rede e entrega de conteúdo**: Amazon VPC (Virtual Private Cloud); Subnets públicas e privadas em múltiplas Availability Zones; Internet Gateway; NAT Gateway; Amazon Route 53 (DNS) e Amazon CloudFront (CDN).
+**Balanceamento e escalabilidade**: Application Load Balancer (ALB); Amazon EC2 Auto Scaling Group (ASG); Amazon EC2 (instâncias em subnets privadas) e Launch Template.
+**Armazenamento e banco de dados**: Amazon RDS (banco de dados gerenciado) e Amazon EFS (Elastic File System – armazenamento compartilhado).
+**Segurança AWS Certificate Manager (ACM)**:  certificados SSL/TLS; Security Groups e Instâncias em subnets privadas (sem acesso direto da internet).
+**Gerenciamento e operação**: AWS Systems Manager (Session Manager); Amazon CloudWatch (monitoramento e métricas) e Amazon SNS (notificações e alertas)
 
 ---
 ---
@@ -56,16 +56,20 @@ O Auto Scaling detectou uma instância com falha e automaticamente lançou uma n
 
 ![Auto Scaling Activity](evidencias/asg-activity.png)
 
-Evento registrado:
-
-- Instância marcada como unhealthy
-- Instância terminada automaticamente
-- Nova instância criada automaticamente
-- Aplicação permaneceu disponível sem intervenção manual
+**Evento registrado**: Instância marcada como unhealthy; Instância terminada automaticamente; Nova instância criada automaticamente e Aplicação permaneceu disponível sem intervenção manual
 
 Isso demonstra: Alta disponibilidade; Self-healing architecture; Fault tolerance; Arquitetura resiliente
 
 ---
+
+### 🔔 Notificação automática via Amazon SNS
+
+O Amazon SNS enviou uma notificação automática informando a terminação da instância não saudável pelo Auto Scaling Group.
+
+![Notificação SNS Auto Scaling](evidencias/sns-autoscaling-terminate.png)
+
+**Evento registrado: Evento**: EC2_INSTANCE_TERMINATE; Serviço: AWS Auto Scaling; Grupo Auto Scaling: asg-wordpress; Ação: Terminação automática da instância não saudável; Origem: Health check failure e Notificação enviada via Amazon SNS
+
 ---
 ## 🌐 Evidência: Aplicação WordPress em funcionamento
 
@@ -104,6 +108,7 @@ Arquitetura alinhada com:
 ## 📚 Autor
 
 Projeto criado para fins de estudo e prática em arquitetura AWS.
+
 
 
 
