@@ -25,15 +25,13 @@ Usuário → Route 53 → CloudFront → Application Load Balancer → EC2 (Auto
 
 | Componente | Screenshot |
 |------------|------------|
-| VPC | ![VPC](evidencias/vpc.png) |
 | CloudFront | ![CloudFront](evidencias/cloudfront.png) |
 | Route 53 | ![Route53](evidencias/route53.png) |
-| ACM | ![ACM](evidencias/acm.png) |
 | Load Balancer | ![ALB](evidencias/alb.png) |
 | Auto Scaling | ![ASG](evidencias/asg.png) |
 | EC2 | ![EC2](evidencias/ec2.png) |
 | RDS | ![RDS](evidencias/rds.png) |
-| EFS | ![EFS](evidencias/efs.png) |
+| ACM | ![ACM](evidencias/acm.png) |
 | Systems Manager | ![SSM](evidencias/ssm.png) |
 
 ---
@@ -61,4 +59,5 @@ Arquitetura alinhada com:
 ## 📚 Autor
 
 Projeto criado para fins de estudo e prática em arquitetura AWS.
+
 
