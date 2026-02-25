@@ -34,19 +34,31 @@ Usuário → Route 53 → CloudFront → Application Load Balancer → EC2 (Auto
 | ACM | ![ACM](evidencias/acm.png) |
 | Systems Manager | ![SSM](evidencias/ssm.png) |
 
+## 📷 Evidência: Auto Scaling substituindo instância automaticamente
+
+O Auto Scaling detectou uma instância com falha e automaticamente lançou uma nova instância saudável, garantindo alta disponibilidade da aplicação.
+
+### Instância substituída automaticamente
+
+![EC2 substituída](evidencias/ec2-substituida.png)
+
+### Histórico do Auto Scaling mostrando substituição automática
+
+![Auto Scaling Activity](evidencias/asg-activity.png)
+
+Evento registrado:
+
+- Instância marcada como unhealthy
+- Instância terminada automaticamente
+- Nova instância criada automaticamente
+- Aplicação permaneceu disponível sem intervenção manual
+
+Isso demonstra: Alta disponibilidade; Self-healing architecture; Fault tolerance; Arquitetura resiliente
 ---
 
 ## ✅ Resultado
 
-Infraestrutura **altamente disponível, segura e escalável**, com:
-
-- Balanceamento de carga  
-- Escalabilidade automática  
-- Comunicação segura via HTTPS  
-- Instâncias em subnets privadas  
-- Banco de dados gerenciado  
-- Sistema de arquivos compartilhado  
-- Gerenciamento seguro via Systems Manager  
+Infraestrutura **altamente disponível, segura e escalável**, com: Balanceamento de carga; Escalabilidade automática; Comunicação segura via HTTPS; Instâncias em subnets privadas; Banco de dados gerenciado; Sistema de arquivos compartilhado e Gerenciamento seguro via Systems Manager  
 
 Arquitetura alinhada com:
 
@@ -59,5 +71,6 @@ Arquitetura alinhada com:
 ## 📚 Autor
 
 Projeto criado para fins de estudo e prática em arquitetura AWS.
+
 
 
