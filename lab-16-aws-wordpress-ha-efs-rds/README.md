@@ -10,22 +10,18 @@ Este laboratório demonstra a implementação de uma arquitetura **altamente dis
 
 ---
 ## Serviços utilizados
+- **Rede e entrega de conteúdo**: Amazon VPC (Virtual Private Cloud); Subnets públicas e privadas em múltiplas Availability Zones; Internet Gateway; NAT Gateway; Amazon Route 53 (DNS) e Amazon CloudFront (CDN).
+- **Balanceamento e escalabilidade**: Application Load Balancer (ALB); Amazon EC2 Auto Scaling Group (ASG); Amazon EC2 (instâncias em subnets privadas) e Launch Template.
+- **Armazenamento e banco de dados**: Amazon RDS (banco de dados gerenciado) e Amazon EFS (Elastic File System – armazenamento compartilhado).
+- **Segurança AWS Certificate Manager (ACM)**:  certificados SSL/TLS; Security Groups e Instâncias em subnets privadas (sem acesso direto da internet).
+- **Gerenciamento e operação**: AWS Systems Manager (Session Manager); Amazon CloudWatch (monitoramento e métricas) e Amazon SNS (notificações e alertas)
 
-
-**Rede e entrega de conteúdo**: Amazon VPC (Virtual Private Cloud); Subnets públicas e privadas em múltiplas Availability Zones; Internet Gateway; NAT Gateway; Amazon Route 53 (DNS) e Amazon CloudFront (CDN).
-**Balanceamento e escalabilidade**: Application Load Balancer (ALB); Amazon EC2 Auto Scaling Group (ASG); Amazon EC2 (instâncias em subnets privadas) e Launch Template.
-**Armazenamento e banco de dados**: Amazon RDS (banco de dados gerenciado) e Amazon EFS (Elastic File System – armazenamento compartilhado).
-**Segurança AWS Certificate Manager (ACM)**:  certificados SSL/TLS; Security Groups e Instâncias em subnets privadas (sem acesso direto da internet).
-**Gerenciamento e operação**: AWS Systems Manager (Session Manager); Amazon CloudWatch (monitoramento e métricas) e Amazon SNS (notificações e alertas)
-
----
 ---
 ## Fluxo da aplicação
 
 Usuário → Route 53 → CloudFront → Application Load Balancer → EC2 (Auto Scaling Group) → RDS e EFS.
 O AWS Certificate Manager (ACM) é utilizado para fornecer certificados SSL/TLS ao CloudFront e ao Application Load Balancer, garantindo comunicação segura via HTTPS.
 
----
 ---
 
 ## 📷 Evidências
@@ -45,7 +41,7 @@ O AWS Certificate Manager (ACM) é utilizado para fornecer certificados SSL/TLS 
 
 ## 📷 Evidência: Auto Scaling substituindo instância automaticamente
 
-O Auto Scaling detectou uma instância com falha e automaticamente lançou uma nova instância saudável, garantindo alta disponibilidade da aplicação.
+- O Auto Scaling detectou uma instância com falha e automaticamente lançou uma nova instância saudável, garantindo alta disponibilidade da aplicação.
 
 ### Instância substituída automaticamente
 
@@ -56,7 +52,7 @@ O Auto Scaling detectou uma instância com falha e automaticamente lançou uma n
 
 ![Auto Scaling Activity](evidencias/asg-activity.png)
 
-**Evento registrado**: Instância marcada como unhealthy; Instância terminada automaticamente; Nova instância criada automaticamente e Aplicação permaneceu disponível sem intervenção manual
+- **Evento registrado**: Instância marcada como unhealthy; Instância terminada automaticamente; Nova instância criada automaticamente e Aplicação permaneceu disponível sem intervenção manual
 
 Isso demonstra: Alta disponibilidade; Self-healing architecture; Fault tolerance; Arquitetura resiliente
 
@@ -108,6 +104,7 @@ Arquitetura alinhada com:
 ## 📚 Autor
 
 Projeto criado para fins de estudo e prática em arquitetura AWS.
+
 
 
 
