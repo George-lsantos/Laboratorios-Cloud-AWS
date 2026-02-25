@@ -1,6 +1,6 @@
 # Laboratório AWS: CloudFront + ALB + Auto Scaling + Route 53 + ACM + RDS + EFS
 
-Este laboratório demonstra a implementação de uma arquitetura **altamente disponível, segura e escalável** na AWS utilizando **CloudFront, Application Load Balancer, Auto Scaling, Route 53, ACM, RDS, EFS e Systems Manager**, seguindo boas práticas do AWS Well-Architected Framework.
+Este laboratório demonstra a implementação de uma arquitetura **altamente disponível, segura e escalável** na AWS utilizando serviços gerenciados e seguindo as boas práticas do **AWS Well-Architected Framework**, incluindo alta disponibilidade em múltiplas Availability Zones, escalabilidade automática e comunicação segura via HTTPS.
 
 ---
 
@@ -9,9 +9,23 @@ Este laboratório demonstra a implementação de uma arquitetura **altamente dis
 ![Diagrama de Arquitetura](evidencias/diagrama.png)
 
 ---
+## Serviços utilizados
 
-## Serviços utilizados 
-Amazon VPC (Subnets públicas e privadas); Amazon EC2 com Auto Scaling Group - Application Load Balancer (ALB); Amazon CloudFront; Amazon Route 53; AWS Certificate Manager (ACM); Amazon RDS; Amazon EFS; NAT Gateway e Internet Gateway; AWS Systems Manager; Security Groups e Launch Template; 
+
+- **Rede e entrega de conteúdo**: Amazon VPC (Virtual Private Cloud); Subnets públicas e privadas em múltiplas Availability Zones; Internet Gateway; NAT Gateway; Amazon Route 53 (DNS) e Amazon CloudFront (CDN).
+- **Balanceamento e escalabilidade**: Application Load Balancer (ALB); Amazon EC2 Auto Scaling Group (ASG); Amazon EC2 (instâncias em subnets privadas) e Launch Template.
+- **Armazenamento e banco de dados**: Amazon RDS (banco de dados gerenciado) e Amazon EFS (Elastic File System – armazenamento compartilhado).
+- **Segurança AWS Certificate Manager (ACM)**:  certificados SSL/TLS; Security Groups e Instâncias em subnets privadas (sem acesso direto da internet).
+- **Gerenciamento e operação**: AWS Systems Manager (Session Manager); Amazon CloudWatch (monitoramento e métricas) e Amazon SNS (notificações e alertas)
+
+---
+
+## Fluxo da aplicação
+
+Usuário → Route 53 → CloudFront → Application Load Balancer → EC2 (Auto Scaling Group) → RDS e EFS
+
+---
+
 
 ---
 
@@ -97,6 +111,7 @@ Arquitetura alinhada com:
 ## 📚 Autor
 
 Projeto criado para fins de estudo e prática em arquitetura AWS.
+
 
 
 
