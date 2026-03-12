@@ -8,8 +8,7 @@ O objetivo é inspecionar tráfego **de entrada e saída da VPC**, aplicando reg
 
 # 🏗 Arquitetura
 
-![Architecture Diagram](architecture/architecture-diagram.png)
-
+Network Firewall | ![](evidencias/architecture-diagram.png)
 ---
 # ☁️ Arquitetura composta por: 
 - **Network**: VPC; Subnets públicas e privadas; Firewall Subnet; AWS Network Firewall; NAT Gateway; EC2 Instances; Route Tables; Internet Gateway e CloudWatch Logs
