@@ -1,9 +1,7 @@
-# 🔥 AWS Network Firewall Inspection Lab
+## 📚 Lab original (AWS Skill Builder)
 
-Este laboratório demonstra a implementação de uma arquitetura de inspeção de tráfego utilizando **AWS Network Firewall**, **VPC Routing** e **NAT Gateway**.
-
-O objetivo é inspecionar tráfego **de entrada e saída da VPC**, aplicando regras de segurança e testando bloqueios de domínio e protocolo.
-
+Este laboratório demonstra a implementação de inspeção de tráfego em uma VPC utilizando o **AWS Network Firewall**. 
+O laboratório demonstra como configurar o AWS Network Firewall, criar rule groups, configurar rotas da VPC e testar inspeção de tráfego HTTP e ICMP.
 ---
 
 # 🏗 Arquitetura
