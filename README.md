@@ -4,7 +4,9 @@
 
 ### Boas-vindas ao meu Portfólio de Projetos!
 
-Este repositório é um showcase prático das minhas habilidades em **Cloud Computing e DevOps**, focado em arquitetura e automação na AWS. Aqui, demonstro como provisiono e gerencio infraestrutura escalável, segura e resiliente, utilizando as melhores práticas do mercado.
+Este repositório contém laboratórios práticos de arquitetura na AWS, organizados de forma progressiva — desde fundamentos de serviços até arquiteturas avançadas de rede, segurança e alta disponibilidade.
+
+Cada laboratório demonstra conceitos importantes utilizados em ambientes reais de produção e alinhados com boas práticas do AWS Well-Architected Framework.
 
 ---
 
